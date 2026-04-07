@@ -11,8 +11,11 @@ fi
 
 # 步骤1: 配置清华源（下载更快）
 echo "[1/6] 正在配置清华镜像源..."
-cp /etc/apt/sources.list /etc/apt/sources.list.backup
-sed -i 's/kali.download/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+sudo tee /etc/apt/sources.list <<-'EOF'
+# 清华源 Kali 镜像
+deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free non-free-firmware
+EOF
 echo "✓ 源配置完成"
 
 # 步骤2: 更新软件列表
