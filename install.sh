@@ -44,6 +44,10 @@ echo "[6/6] 正在创建工作目录..."
 mkdir -p ~/tools ~/wordlists ~/results
 echo "✓ 目录创建完成"
 
+# 步骤7： 更新
+apt update
+apt full-upgrade -y
+reboot
 echo ""
 echo "=================================="
 echo " 配置完成！"
